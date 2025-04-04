@@ -1,0 +1,63 @@
+const {PractisePage}=require('../Pageobject/Loginpage')
+const{Coursetable}=require('../Pageobject/Coursetable')
+const{Newtab_Newwindow}=require('../Pageobject/Newtab_Newwindow')
+const{Externallink}=require('../Pageobject/Externallink')
+const{HidingFunction}=require('../Pageobject/HidingFunction')
+const{TitlepageandButtons}=require('../Pageobject/TitlepageandButtons')
+const{Javapopup}=require('../Pageobject/Javapopup')
+const{Framecheck}=require('../Pageobject/Framecheck')
+
+class POManager{
+    constructor(context,page){
+
+        this.page=page;
+        this.context=context;
+        this.practiseobj=new PractisePage(this.page);
+        this.courseobj=new Coursetable(this.page);
+        this.newtabobj=new Newtab_Newwindow(this.page,context);
+        this.linkobj=new Externallink(page);
+        this.hideobj=new HidingFunction(this.page);
+        this.titleobj=new TitlepageandButtons(this.page);
+        this.popupobj=new Javapopup(this.page);
+        this.frameobj=new Framecheck(this.page)
+    }
+    
+    getLoginpage()
+    {
+        return this.practiseobj;
+    }
+    getCoursetable()
+    {
+        return this.courseobj; 
+    }
+    getNewtab_Newwindow()
+    {
+        return this.newtabobj;
+    }
+    getExternallink()
+    {
+        return this.linkobj;
+    }
+    getHidingFunction()
+    {
+        return this.hideobj;
+    }
+    getTitlepageandButtons()
+    {
+        return this.titleobj;        
+    }
+    getJavapopup()
+    {
+        return this.popupobj;
+    }
+    getFramework()
+    {
+        return this.frameobj;
+    }
+    
+
+    
+
+
+}
+module.exports={POManager}
