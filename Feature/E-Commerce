@@ -1,0 +1,26 @@
+Feature: Ecommerce Validation
+
+@RegistrationTC01
+
+Scenario: Registeration
+Given Register to Ecommerce application with data in Excel
+
+@AddtoCartTC02
+
+Scenario Outline:Placing the Order
+Given login to Ecommerce application with "<username>" and "<password>" 
+Then Add "<product>" to the cart
+Then Verify "<product>" is displayed in the cart
+When valid details and Place the order is done
+Then Verify the Order in the history page 
+Examples:
+| username            |  | password  | |product        |
+| sampleid9@gmail.com |  | aA123456@ | |ADIDAS ORIGINAL|
+| sampleid82@gmail.com|  | aA123456@ | |ZARA COAT 3    |
+
+
+
+
+
+
+
